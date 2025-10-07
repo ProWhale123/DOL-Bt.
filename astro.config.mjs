@@ -5,7 +5,10 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [
-      tailwindcss(),
+      tailwindcss({
+        // Explicit config path to help with resolution
+        config: './tailwind.config.mjs'
+      }),
     ],
   },
 });
