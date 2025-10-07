@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Fejlec from '../components/Fejlec.astro';
+import Lablec from '../components/Lablec.astro';
+import KapcsolatiUrlap from '../components/KapcsolatiUrlap.astro'; // <-- Az új komponens importálása
+---
+<Layout title="Kapcsolat | DOL Bt.">
+    <Fejlec />
+
+    <main>
+        <KapcsolatiUrlap />
+    </main>
+    
+    <Lablec />
+</Layout>

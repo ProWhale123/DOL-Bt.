@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Fejlec from '../components/Fejlec.astro';
+import Lablec from '../components/Lablec.astro';
+import AjanlatkeresSzekcio from '../components/AjanlatkeresSzekcio.astro';
+
+const gyikKategoriak = [
+    {
+        nev: "A 'Határtalanul!' Pályázat",
+        slug: "palyazat",
+        kerdesek: [
+            {
+                kerdes: "Segítenek a pályázat megírásában és az elszámolásban?",
+                valasz: "Igen, teljeskörű segítséget nyújtunk. Több éves tapasztalatunkkal segítünk a pályázati anyag összeállításától kezdve a pénzügyi elszámolás elkészítéséig, levéve az adminisztratív terheket a pedagógusok válláról."
+            },
+            {
+                kerdes: "Milyen költségeket fedez a megnyert pályázati összeg?",
+                valasz: "A pályázati támogatás általában fedezi az utazás, a szállás, a félpanziós ellátás, az idegenvezetés és a programhoz kapcsolódó belépők költségeit. Pontos részletekért mindig az aktuális pályázati kiírás a mérvadó, melynek értelmezésében segítünk."
+            }
+        ]
+    },
+    {
+        nev: "Utazás és Programok",
+        slug: "utazas",
+        kerdesek: [
+            {
+                kerdes: "Milyen járművekkel történik az utazás?",
+                valasz: "Kizárlag modern, légkondicionált, a diákutaztatásra vonatkozó legszigorúbb biztonsági előírásoknak is megfelelő autóbuszokkal dolgozunk. Tapasztalt és megbízható sofőrpartnereink vannak."
+            },
+            {
+                kerdes: "Mennyire rugalmas az útiterv? Lehet változtatásokat kérni?",
+                valasz: "Igen, a megadott útiterv egy bevált javaslat. Minden esetben egyeztetünk az iskolával, és a lehetőségekhez mérten igyekszünk figyelembe venni az egyedi kéréseket, hogy az út a lehető legjobban illeszkedjen a csoport szakmai és közösségi céljaihoz."
+            }
+        ]
+    },
+    {
+        nev: "Szállás, Ellátás, Biztonság",
+        slug: "szallas",
+        kerdesek: [
+            {
+                kerdes: "Tudnak speciális étrendet (pl. gluténmentes) biztosítani?",
+                valasz: "Igen, az ilyen igényeket kérjük előre jelezni. Partnereink felkészültek a leggyakoribb ételintoleranciák kezelésére, és igyekszünk mindenki számára megfelelő étkezést biztosítani."
+            },
+            {
+                kerdes: "Minden diák rendelkezik utasbiztosítással az út során?",
+                valasz: "Igen, minden utasunk számára teljeskörű utasbiztosítást kötünk, amely fedezi az esetleges orvosi ellátás költségeit is."
+            }
+        ]
+    }
+];
+---
+<Layout title="Gyakran Ismételt Kérdések | DOL Bt.">
+    <Fejlec />
+    <main>
+        <section class="bg-slate-50 py-20">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h1 class="font-display text-4xl md:text-5xl font-extrabold text-slate-800">
+                    Gyakran Ismételt Kérdések
+                </h1>
+                <span class="block w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></span>
+                <p class="text-xl text-slate-600 mt-6 leading-relaxed">
+                    Minden, amit a "Határtalanul!" utazásokról és a szolgáltatásainkról tudni érdemes.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+                    
+                    <aside class="lg:col-span-1">
+                        <ul class="space-y-2 sticky top-28">
+                            {gyikKategoriak.map((kategoria, index) => (
+                                <li>
+                                    <button 
+                                        data-target={`#${kategoria.slug}`} 
+                                        class:list={[
+                                            "faq-category-btn w-full text-left font-semibold text-lg p-3 rounded-lg transition-colors duration-200",
+                                            index === 0 ? 'bg-teal-100 text-teal-800' : 'text-slate-600 hover:bg-slate-100'
+                                        ]}
+                                    >
+                                        {kategoria.nev}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </aside>
+
+                    <div class="lg:col-span-3">
+                        {gyikKategoriak.map((kategoria, index) => (
+                            <div id={kategoria.slug} class:list={["faq-category-content", index > 0 ? 'hidden' : '']}>
+                                <h2 class="font-display text-3xl font-bold text-slate-800 mb-8">{kategoria.nev}</h2>
+                                <div class="space-y-4">
+                                    {kategoria.kerdesek.map(item => (
+                                        <details class="group border-b border-slate-200 pb-4">
+                                            <summary class="flex justify-between items-center cursor-pointer font-semibold text-lg text-slate-800 hover:text-teal-600 list-none">
+                                                <span>{item.kerdes}</span>
+                                                <div class="text-teal-500 transform group-open:rotate-45 transition-transform">
+                                                    <svg xmlns="http://www.w.3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                                                </div>
+                                            </summary>
+                                            <p class="mt-4 text-slate-600 leading-relaxed">
+                                                {item.valasz}
+                                            </p>
+                                        </details>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <AjanlatkeresSzekcio />
+    </main>
+    <Lablec />
+</Layout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const categoryButtons = document.querySelectorAll('.faq-category-btn');
+        const categoryContents = document.querySelectorAll('.faq-category-content');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Tartalom elrejtése
+                categoryContents.forEach(content => content.classList.add('hidden'));
+                
+                // Aktív gomb stílusának resetelése
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-teal-100', 'text-teal-800');
+                    btn.classList.add('text-slate-600', 'hover:bg-slate-100');
+                });
+
+                // Cél tartalom megjelenítése
+                const targetId = button.dataset.target;
+                document.querySelector(targetId).classList.remove('hidden');
+
+                // Aktív gomb stílusának beállítása
+                button.classList.add('bg-teal-100', 'text-teal-800');
+                button.classList.remove('text-slate-600', 'hover:bg-slate-100');
+            });
+        });
+    });
+</script>

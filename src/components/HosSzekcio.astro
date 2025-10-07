@@ -1,0 +1,33 @@
+---
+const hatterKepUrl = "/images/travel-hero.jpg"; 
+---
+<section 
+    class="relative h-[80vh] min-h-[550px] bg-cover bg-center flex items-center justify-center text-white" 
+    style={`background-image: url('${hatterKepUrl}')`}
+>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20"></div>
+
+    <div class="relative z-10 text-center px-6">
+        <h1 class="font-display text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+            Tudás és kaland a határokon túl
+        </h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 drop-shadow-md font-sans">
+            Élményalapú tanulmányi utakat szervezünk a "Határtalanul!" program keretében, amelyek örökre összekötik a diákokat a magyar kultúrával és egymással.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+                href="/kapcsolat#ajanlatkeres" 
+                class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
+            >
+                Ajánlatot kérek
+            </a>
+            <a 
+                href="/rolunk" 
+                class="bg-white/10 border-2 border-white/50 backdrop-blur-sm hover:bg-white/20 hover:border-white text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300"
+            >
+                Tudjon meg többet rólunk
+            </a>
+        </div>
+    </div>
+</section>

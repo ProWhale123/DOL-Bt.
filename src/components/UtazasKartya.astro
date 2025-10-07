@@ -1,0 +1,19 @@
+---
+interface Props {
+    kepUrl: string;
+    celpont: string;
+    leiras: string;
+    slug: string;
+}
+const { kepUrl, celpont, leiras, slug } = Astro.props;
+---
+<div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col">
+    <img src={kepUrl} alt={`Kép: ${celpont}`} class="w-full h-48 object-cover">
+    <div class="p-6 flex flex-col flex-grow">
+        <h3 class="text-2xl font-bold text-slate-800 mb-2">{celpont}</h3>
+        <p class="text-slate-600 mb-4 flex-grow">{leiras}</p>
+        <a href={`/utazasok/${slug}`} class="text-cyan-600 hover:text-cyan-700 font-semibold mt-auto">
+            Részletek →
+        </a>
+    </div>
+</div>

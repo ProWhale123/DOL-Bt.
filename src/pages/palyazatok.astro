@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Fejlec from '../components/Fejlec.astro';
+import Lablec from '../components/Lablec.astro';
+import UtazasKartya from '../components/UtazasKartya.astro';
+import AjanlatkeresSzekcio from '../components/AjanlatkeresSzekcio.astro';
+import { utazasok } from '../data/utazasok.js';
+---
+<Layout 
+    title="Pályázatok | DOL Bt."
+    description="Fedezze fel kiemelt pályázati célpontjainkat a Határtalanul! program keretében. Kínálatunkban szerepelnek erdélyi körutak, felvidéki vártúrák és muravidéki kincskeresések."
+>
+    <Fejlec />
+    <main>
+        <section class="bg-slate-50 py-20">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h1 class="font-display text-4xl md:text-5xl font-extrabold text-slate-800">
+                    Pályázati Célpontjaink
+                </h1>
+                <span class="block w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></span>
+                <p class="text-xl text-slate-600 mt-6 leading-relaxed">
+                    Fedezze fel bevált és népszerű úticéljainkat, amelyeket kifejezetten a "Határtalanul!" program szellemében állítottunk össze. Minden utazásunk a személyes tapasztalatszerzésre és a magyar kultúra megismerésére fókuszál.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {utazasok.map(ut => (
+                        <UtazasKartya 
+                            celpont={ut.celpont}
+                            leiras={ut.leiras}
+                            kepUrl={ut.kepUrl}
+                            slug={ut.slug}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-50 py-20">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h2 class="font-display text-3xl font-extrabold text-slate-800">
+                    Egyedi elképzelése van?
+                </h2>
+                <p class="text-xl text-slate-600 mt-4 leading-relaxed">
+                    Amennyiben a fenti úticélok között nem találta meg az Önnek megfelelőt, vagy teljesen egyedi ötlete van, vegye fel velünk a kapcsolatot, és kidolgozunk egy személyre szabott utazási tervet!
+                </p>
+                <a 
+                    href="/kapcsolat" 
+                    class="inline-block mt-8 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg hover:shadow-xl"
+                >
+                    Kapcsolatfelvétel
+                </a>
+            </div>
+        </section>
+    </main>
+    <Lablec />
+</Layout>

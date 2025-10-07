@@ -1,0 +1,48 @@
+---
+const year = new Date().getFullYear();
+const menuPontok = [
+    { nev: "Főoldal", url: "/" },
+    { nev: "Pályázatok", url: "/palyazatok" },
+    { nev: "Rólunk", url: "/rolunk" },
+    { nev: "GY.I.K.", url: "/gyik" }
+];
+---
+<footer class="bg-slate-900 text-slate-300">
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-white font-display">DOL Bt.</h3>
+                <p class="text-slate-400 mt-2">Élményalapú tanulmányi utak 1998 óta.</p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Hasznos linkek</h4>
+                <ul class="space-y-2">
+                    {menuPontok.map(pont => (
+                        <li>
+                            <a href={pont.url} class="text-slate-400 hover:text-teal-400 transition">
+                                {pont.nev}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Kapcsolat</h4>
+                <div class="text-slate-400 space-y-2">
+                    <p>Email: <a href="mailto:info@dolbt.hu" class="hover:text-teal-400 transition">info@dolbt.hu</a></p>
+                    <p>Telefon: +36 30 123 4567</p>
+                    <p>1117 Budapest, Bogdánffy Ö. u. 8/c.</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="mt-12 border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-slate-500 text-sm">
+            <p class="mb-4 sm:mb-0">© {year} DOL Bt. Minden jog fenntartva.</p>
+            <a href="/adatvedelem" class="hover:text-teal-400 transition">Adatvédelmi nyilatkozat</a>
+        </div>
+    </div>
+</footer>

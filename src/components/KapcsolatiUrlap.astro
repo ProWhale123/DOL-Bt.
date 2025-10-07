@@ -1,0 +1,53 @@
+<section id="ajanlatkeres" class="py-20 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center">
+            <h1 class="font-display text-4xl md:text-5xl font-extrabold text-slate-800">
+                Vegye fel velünk a kapcsolatot!
+            </h1>
+            <span class="block w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></span>
+            <p class="text-xl text-slate-600 mt-6 leading-relaxed max-w-2xl mx-auto">
+                Kérdése van, vagy személyre szabott ajánlatot szeretne? Töltse ki az űrlapot, és kollégánk hamarosan felveszi Önnel a kapcsolatot.
+            </p>
+        </div>
+
+        <form 
+            name="ajanlatkeres"
+            method="POST" 
+            data-netlify="true" 
+            class="bg-slate-50 p-8 rounded-lg shadow-xl border border-slate-100 mt-12 max-w-2xl mx-auto"
+        >
+            <input type="hidden" name="form-name" value="ajanlatkeres" />
+            <div class="mb-6">
+                <label for="intezmenyNev" class="block text-slate-800 text-lg font-semibold mb-2">Intézmény neve <span class="text-red-500">*</span></label>
+                <input type="text" id="intezmenyNev" name="intezmenyNev" required 
+                       class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-200">
+            </div>
+            <div class="mb-6">
+                <label for="kapcsolattartoNev" class="block text-slate-800 text-lg font-semibold mb-2">Kapcsolattartó neve <span class="text-red-500">*</span></label>
+                <input type="text" id="kapcsolattartoNev" name="kapcsolattartoNev" required 
+                       class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-200">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label for="email" class="block text-slate-800 text-lg font-semibold mb-2">E-mail cím <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" required 
+                           class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-200">
+                </div>
+                <div>
+                    <label for="telefon" class="block text-slate-800 text-lg font-semibold mb-2">Telefonszám <span class="text-red-500">*</span></label>
+                    <input type="tel" id="telefon" name="telefon" required 
+                           class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-200">
+                </div>
+            </div>
+            <div class="mb-8">
+                <label for="uzenet" class="block text-slate-800 text-lg font-semibold mb-2">Üzenet / Részletek (opcionális)</label>
+                <textarea id="uzenet" name="uzenet" rows="5" 
+                          class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-200"></textarea>
+            </div>
+            <button type="submit" 
+                    class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-full text-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                Ajánlatkérés elküldése
+            </button>
+        </form>
+    </div>
+</section>

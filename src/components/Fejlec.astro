@@ -1,0 +1,80 @@
+---
+const menuPontok = [
+    { nev: "Főoldal", url: "/" },
+    { nev: "Pályázatok", url: "/palyazatok" },
+    { nev: "Rólunk", url: "/rolunk" },
+    { nev: "GY.I.K.", url: "/gyik" },
+    { nev: "Kapcsolat", url: "/kapcsolat" }
+];
+
+const aktualisUrl = Astro.url.pathname;
+---
+<header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-extrabold text-cyan-700 tracking-wide font-display">
+            <a href="/">DOL Bt.</a>
+        </div>
+        
+        <div class="hidden md:flex space-x-8 items-center">
+            {menuPontok.map(pont => {
+                const isActive = aktualisUrl === pont.url || (pont.url !== "/" && aktualisUrl.startsWith(pont.url));
+                return (
+                    <a 
+                        href={pont.url} 
+                        class:list={[
+                            "font-medium text-lg transition duration-300",
+                            isActive ? "text-cyan-600" : "text-slate-700 hover:text-cyan-600"
+                        ]}
+                    >
+                        {pont.nev}
+                    </a>
+                )
+            })}
+            <a 
+                href="/kapcsolat#ajanlatkeres" 
+                class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-5 rounded-full transition duration-300 shadow-md hover:shadow-lg"
+            >
+                Ajánlatkérés
+            </a>
+        </div>
+
+        <div class="md:hidden">
+            <button id="hamburger-gomb" class="text-slate-700 focus:outline-none z-50 relative" aria-label="Menü megnyitása">
+                <svg id="hamburger-ikon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg id="x-ikon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 hidden">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobil-menu" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 -translate-y-full opacity-0 transition-all duration-300 ease-in-out">
+        <div class="flex flex-col items-center py-8 space-y-6">
+            {menuPontok.map(pont => (
+                 <a href={pont.url} class="text-slate-700 text-2xl font-medium">{pont.nev}</a>
+            ))}
+             <a 
+                href="/kapcsolat#ajanlatkeres" 
+                class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-md"
+            >
+                Ajánlatkérés
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    const hamburgerGomb = document.getElementById('hamburger-gomb');
+    const mobilMenu = document.getElementById('mobil-menu');
+    const hamburgerIkon = document.getElementById('hamburger-ikon');
+    const xIkon = document.getElementById('x-ikon');
+
+    hamburgerGomb.addEventListener('click', () => {
+        mobilMenu.classList.toggle('-translate-y-full');
+        mobilMenu.classList.toggle('opacity-0');
+        hamburgerIkon.classList.toggle('hidden');
+        xIkon.classList.toggle('hidden');
+    });
+</script>

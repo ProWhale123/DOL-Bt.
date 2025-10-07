@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Fejlec from '../components/Fejlec.astro';
+import Lablec from '../components/Lablec.astro';
+// Komponensek újrahasznosítása a konzisztens designért
+import MiertMinketSzekcio from '../components/MiertMinketSzekcio.astro';
+import AjanlatkeresSzekcio from '../components/AjanlatkeresSzekcio.astro';
+---
+<Layout 
+    title="Rólunk | DOL Bt."
+    description="Több mint 25 év tapasztalattal a hátunk mögött hiszünk abban, hogy a tanulmányi utak a tudás és a közösségépítés legszebb formái."
+>
+    <Fejlec />
+
+    <main>
+        <section class="bg-slate-50 py-20 lg:py-24">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <p class="font-semibold text-teal-600 mb-2">A cégünkről</p>
+                        <h1 class="font-display text-4xl md:text-5xl font-extrabold text-slate-800">
+                            Értéket teremtünk, közösségeket kötünk össze.
+                        </h1>
+                        <p class="text-lg md:text-xl mt-6 max-w-xl text-slate-600">
+                            Több mint 25 év tapasztalattal a hátunk mögött hiszünk abban, hogy a tanulmányi utak a tudás és a közösségépítés legszebb formái.
+                        </p>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/images/erdely2.jpg" alt="Csoportkép egy erdélyi utazásról" class="rounded-lg shadow-xl aspect-[4/3] object-cover w-full max-w-md">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-20">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center">
+                    <h2 class="font-display text-3xl md:text-4xl font-extrabold text-slate-800">
+                        A DOL Bt. Története
+                    </h2>
+                    <span class="block w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></span>
+                </div>
+                <div class="prose prose-lg max-w-none text-slate-700 mt-8 text-center">
+                    <p>
+                        A <strong>DOL Kulturális Kiadó Betéti Társaságot 1998-ban</strong> azzal a céllal alapítottuk, hogy a magyar kultúrát és tudást minél szélesebb körben elérhetővé tegyük. Kezdetben kiadói tevékenységünkkel, ma pedig a "Határtalanul!" program keretében szervezett, élményalapú tanulmányi utazásainkkal szolgáljuk ugyanazt a missziót: értéket teremteni és összekötni a magyar közösségeket.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <MiertMinketSzekcio />
+
+<section class="bg-white py-20">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-16">
+             <h2 class="font-display text-3xl md:text-4xl font-extrabold text-slate-800">
+                Elkötelezettségünk
+            </h2>
+            <span class="block w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></span>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-slate-50 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="inline-block bg-teal-100 text-teal-600 rounded-full p-4 mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold font-display text-slate-800 mb-3">Szakértői Támogatás</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Ismerjük a program minden követelményét, segítünk a pályázati anyag összeállításában és a pénzügyi elszámolásban is, hogy Önöknek csak a szakmai programokra kelljen koncentrálniuk.
+                </p>
+            </div>
+
+            <div class="bg-slate-50 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="inline-block bg-teal-100 text-teal-600 rounded-full p-4 mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold font-display text-slate-800 mb-3">Biztonság és Megbízhatóság</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    A diákok biztonsága számunkra a legfontosabb. Minden partnerünket, szállásadónkat és buszsofőrünket a legszigorúbb kritériumok alapján választjuk ki.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+        <AjanlatkeresSzekcio />
+    </main>
+    
+    <Lablec />
+</Layout>
