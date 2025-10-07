@@ -6,9 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // Az 'Inter' lesz az alapértelmezett 'sans-serif' betűtípus.
         sans: ['Inter', 'sans-serif'],
-        // Létrehozunk egy 'display' családot a 'Poppins'-szal a címeknek.
         display: ['Poppins', 'sans-serif'],
       },
     },
