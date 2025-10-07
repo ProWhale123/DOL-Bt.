@@ -1,0 +1,10 @@
+# Netlify build configuration
+
+[build]
+command = "npm run build"
+publish = "dist/"
+
+[build.environment]
+# Ez a legfontosabb sor:
+# Rögzítjük a Node.js verziót egy modern, stabil változatra.
+NODE_VERSION = "18"
