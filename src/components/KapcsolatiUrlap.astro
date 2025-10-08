@@ -14,9 +14,16 @@
             name="ajanlatkeres"
             method="POST" 
             data-netlify="true" 
-            class="bg-slate-50 p-8 rounded-lg shadow-xl border border-slate-100 mt-12 max-w-2xl mx-auto"
+            data-netlify-honeypot="bot-field" action="/koszonjuk/" class="bg-slate-50 p-8 rounded-lg shadow-xl border border-slate-100 mt-12 max-w-2xl mx-auto"
         >
             <input type="hidden" name="form-name" value="ajanlatkeres" />
+            
+            <div class="hidden">
+                <label>
+                    Ezt a mezőt hagyd üresen: <input name="bot-field" />
+                </label>
+            </div>
+            
             <div class="mb-6">
                 <label for="intezmenyNev" class="block text-slate-800 text-lg font-semibold mb-2">Intézmény neve <span class="text-red-500">*</span></label>
                 <input type="text" id="intezmenyNev" name="intezmenyNev" required 
@@ -51,3 +58,9 @@
         </form>
     </div>
 </section>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
