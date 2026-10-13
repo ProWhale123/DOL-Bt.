@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Fejlec from '../components/Fejlec.astro';
+import Lablec from '../components/Lablec.astro';
+---
+<Layout title="Köszönjük">
+    <Fejlec />
+
+    <main>
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h1 class="font-display text-4xl md:text-5xl font-extrabold text-slate-800">
+                    Köszönjük megkeresését!
+                </h1>
+                <span class="block w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></span>
+                <p class="text-xl text-slate-600 mt-6 leading-relaxed max-w-2xl mx-auto">
+                    Üzenetét megkaptuk. Kollégánk hamarosan felveszi Önnel a kapcsolatot.
+                </p>
+                <a href="/" class="inline-block mt-10 bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition duration-300">
+                    Vissza a főoldalra
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <Lablec />
+</Layout>
