@@ -17,7 +17,7 @@ export const utazasok = [
     {
         celpont: "Kassától a Szepességig",
         leiras: "Kassa, Homonna, Tőketerebes, Késmárk, Szepes vára és Lőcse – három nap a Felvidék keleti részén.",
-        kepUrl: "/images/slovakia.jpg",
+        kepUrl: "/images/szepesi-var.jpg",
         slug: "kassatol-a-szepessegig",
         idotartam: "3 nap / 2 éjszaka",
         kinek_ajanlott: "7. osztályosoknak",
@@ -128,7 +128,7 @@ export const utazasok = [
     {
         celpont: "Nyitra vidéke és a Vágmente",
         leiras: "Nyitra, Trencsén, Beckó, Nagytapolcsány, Bajmóc és Zsére – két nap a Felvidék nyugati részén.",
-        kepUrl: "/images/slovakia.jpg",
+        kepUrl: "/images/bajmoc.jpg",
         slug: "nyitra-videke-es-a-vagmente",
         idotartam: "2 nap / 1 éjszaka",
         kinek_ajanlott: "7. osztályosoknak",
